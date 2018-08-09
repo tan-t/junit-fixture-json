@@ -1,0 +1,24 @@
+[
+	{
+		"person": {
+			"name": "fuga",
+			"id": 1
+		},
+		"pet": {
+			"name": "Tom"
+		},
+		"expectation": "hello,fuga",
+		"testCaseName": "fugaのときfuga"
+	},
+	{
+		"person": {
+			"name": "hogera",
+			"id": 1
+		},
+		"pet": {
+			"name": "Tom"
+		},
+		"expectation": "hello,hogera",
+		"testCaseName": "hogeraのときhogera"
+	}
+]
