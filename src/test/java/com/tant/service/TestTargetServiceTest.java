@@ -54,25 +54,12 @@ public class TestTargetServiceTest {
 	
 	@Parameters(name="{3}")
 	public static List<Object[]> data(){
-//		return new JSONLoaderImpl(new ObjectMapper()).data(new Class<?>[]{TestBean.class,PetBean.class,String.class,String.class}, TestTargetServiceTest.class, "./data.json");
 		return new JSONLoaderImpl(new ObjectMapper()).parameters(TestTargetServiceTest.class, "./data.json");
 	}
 	
 	@Test
 	public void test() {
-//		TestBean fixture = new TestBean();
-//		fixture.setName("hoge");
-//		JSONLoader loader = new JSONLoaderImpl();
-//		TestBean fixture = loader.load(TestBean.class, this.getClass(),"./test.json");
 		when(testDao.getTestBeanById(0)).thenReturn(this.person);
 		assertThat(service.sayHello(0),is(this.expectation));
-//		ObjectMapper om = new ObjectMapper();
-//		try {
-//			Map<String,Object> m = om.readValue("{\"test\":{\"hoge\":\"fuga\"}}", AHashMap.class);
-//			System.out.println(m.get("test"));
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//			fail();
-//		}
 	}
 }
