@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class JSONLoaderImpl implements JSONLoader {
+class JSONLoaderImpl implements JSONLoader {
 	
 	private final ObjectMapper om;
 
@@ -59,12 +59,6 @@ public class JSONLoaderImpl implements JSONLoader {
 			i++;
 		}
 		return arr.toArray();
-	}
-	
-	private String loadResource(Class<?> clazz,String pathStr) throws URISyntaxException, IOException {
-		Path path = Paths.get(clazz.getResource(pathStr).toURI());
-		BufferedReader br = Files.newBufferedReader(path, StandardCharsets.UTF_8);
-		return br.lines().collect(Collectors.joining());
 	}
   
 }
